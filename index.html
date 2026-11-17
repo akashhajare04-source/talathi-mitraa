@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महसूल, अर्ज व तलाठी मित्र - डिजिटल हँडबुक</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans Devanagari', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pb-20">
+
+    <!-- Header -->
+    <header class="bg-emerald-700 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">🌾 महसूल, अर्ज व तलाठी मित्र</h1>
+            <span class="text-xs bg-emerald-800 px-2 py-1 rounded">Digital Talathi Handbook</span>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs (6 Tabs) -->
+    <nav class="bg-white shadow-sm border-b sticky top-14 z-40 overflow-x-auto">
+        <div class="max-w-4xl mx-auto flex whitespace-nowrap px-2">
+            <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn px-4 py-3 font-semibold text-emerald-700 border-b-2 border-emerald-700 text-sm">⚖️ हँडबुक (MLRC)</button>
+            <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-emerald-700 text-sm">📋 पंचनामा</button>
+            <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-emerald-700 text-sm">📝 अर्ज</button>
+            <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-emerald-700 text-sm">📖 शब्दकोश</button>
+            <button onclick="switchTab(5)" id="tab-btn-5" class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-emerald-700 text-sm">📐 मोजणी</button>
+            <button onclick="switchTab(6)" id="tab-btn-6" class="tab-btn px-4 py-3 font-medium text-gray-600 hover:text-emerald-700 text-sm">📊 महसुली लेखे</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto p-4 mt-2">
+
+        <!-- TAB 1: Handbook & MLRC 1966 -->
+        <div id="tab-content-1" class="tab-content space-y-4">
+            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
+                <h2 class="font-bold text-emerald-800 text-lg mb-1">⚖️ महाराष्ट्र जमीन महसूल संहिता, १९६६ (MLRC)</h2>
+                <p class="text-sm text-emerald-700">सर्व ३३७ कलमे आणि १६ प्रकरणांची संपूर्ण माहिती. (कोणतेही प्रकरण पाहण्यासाठी ५ सेकंदांची जाहिरात पाहून ७ दिवसांसाठी तात्पुरते अनलॉक करा)[cite: 2, 14, 15].</p>
+            </div>
+
+            <!-- Search & Master Directory Trigger -->
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+                <input type="text" id="mlrc-search" placeholder="कलम नंबर (उदा. 143, 155) किंवा विषय टाका..." oninput="filterMlrc()" class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500">
+                
+                <div class="text-center pt-2">
+                    <button onclick="toggleChaptersModal()" class="bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm shadow hover:bg-emerald-700 transition">
+                        📖 महाराष्ट्र जमीन महसूल संहिता, १९६६ पहा (१६ प्रकरणे)[cite: 2, 14]
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Field Guide Cards -->
+            <div class="space-y-3">
+                <h3 class="font-bold text-gray-700 text-md">📌 तलाठ्यांची दैनंदिन महत्त्वाची कलमे</h3>
+                <div class="grid gap-3 md:grid-cols-2">
+                    <div class="bg-white p-3 rounded shadow-sm border text-sm">
+                        <span class="font-bold text-emerald-700">कलम ४, ७, १४:</span> साझा, मंडळ रचना आणि तलाठ्याचे अधिकार व अभिलेख ठेवण्याचे कर्तव्य[cite: 24, 26, 29].
+                    </div>
+                    <div class="bg-white p-3 rounded shadow-sm border text-sm">
+                        <span class="font-bold text-emerald-700">कलम ३६ व ३६-क:</span> आदिवासी जमिनींचे हस्तांतरण निर्बंध आणि निर्वाहक क्षेत्र (१६ एकर जिरायती)[cite: 37, 41, 42].
+                    </div>
+                    <div class="bg-white p-3 rounded shadow-sm border text-sm">
+                        <span class="font-bold text-emerald-700">कलम ४१:</span> शेतातील इमारत (Farm House) उभारणी - १५० चौ.मी. जोते क्षेत्र मर्यादा[cite: 44, 45].
+                    </div>
+                    <div class="bg-white p-3 rounded shadow-sm border text-sm">
+                        <span class="font-bold text-emerald-700">कलम ४९:</span> शेजारच्या शेतातून पाण्याची पाईपलाईन नेण्याचा अधिकार[cite: 8, 54, 55].
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Panchnama Generator -->
+        <div id="tab-content-2" class="tab-content hidden space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border">
+                <h2 class="font-bold text-emerald-800 text-lg mb-2">📋 रेडीमेड पंचनामा फॉरमॅट्स</h2>
+                <p class="text-sm text-gray-600 mb-4">तलाठी कार्यालयासाठी लागणारे आवश्यक पंचनामे थेट प्रिंट करा.</p>
+                
+                <div class="space-y-3">
+                    <div class="border p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-sm">1. नैसर्गिक आपत्ती / पीक नुकसान पंचनामा</h4>
+                            <p class="text-xs text-gray-500">अतिवृष्टी किंवा गारपीटीमुळे झालेले नुकसान.</p>
+                        </div>
+                        <button onclick="alert('पंचनामा PDF तयार होत आहे...')" class="bg-emerald-600 text-white px-3 py-1.5 rounded text-xs">प्रतकाढणी (Print)</button>
+                    </div>
+                    <div class="border p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-sm">2. वारस चौकशी व वंशावळ पंचनामा</h4>
+                            <p class="text-xs text-gray-500">मृत खातेदाराच्या वारस नोंदीसाठी.</p>
+                        </div>
+                        <button onclick="alert('पंचनामा PDF तयार होत आहे...')" class="bg-emerald-600 text-white px-3 py-1.5 rounded text-xs">प्रतकाढणी (Print)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: Applications & Drafts -->
+        <div id="tab-content-3" class="tab-content hidden space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border">
+                <h2 class="font-bold text-emerald-800 text-lg mb-2">📝 शासकीय अर्ज जनरेटर</h2>
+                <p class="text-sm text-gray-600 mb-4">माहिती भरा आणि थेट शासकीय अर्जाची प्रिंट काढा.</p>
+                <div class="space-y-2">
+                    <select id="app-type" class="w-full p-2 border rounded text-sm">
+                        <option>वारस नोंद अर्ज (तलाठी कार्यालय)</option>
+                        <option>७/१२ नाव दुरुस्ती अर्ज</option>
+                        <option>कलम ४९ अंतर्गत पाण्याची पाईपलाईन अर्ज[cite: 8, 54, 55]</option>
+                        <option>ई-पीक पाहणी दुरुस्ती अर्ज</option>
+                    </select>
+                    <input type="text" placeholder="अर्जदाराचे पूर्ण नाव" class="w-full p-2 border rounded text-sm">
+                    <input type="text" placeholder="गाव व तालुका" class="w-full p-2 border rounded text-sm">
+                    <button onclick="alert('अर्ज तयार झाला! ప్రింটিং सुरू होत आहे.')" class="w-full bg-emerald-600 text-white py-2 rounded text-sm font-semibold">अर्ज तयार करा व प्रिंट करा</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: Dictionary & Checklist -->
+        <div id="tab-content-4" class="tab-content hidden space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border">
+                <h2 class="font-bold text-emerald-800 text-lg mb-2">📖 ७/१२ शब्दकोश व कागदपत्रे चेकलिस्ट</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h3 class="font-semibold text-sm text-gray-700 mb-2">महसुली शब्द:</h3>
+                        <ul class="text-sm space-y-1 bg-gray-50 p-3 rounded border">
+                            <li><strong class="text-emerald-700">भोगवटादार वर्ग १:</strong> संपूर्ण मालकी हक्क[cite: 19].</li>
+                            <li><strong class="text-emerald-700">पोटखराबा:</strong> पडीक किंवा वापरात नसलेली जमीन[cite: 20].</li>
+                            <li><strong class="text-emerald-700">फेरफार:</strong> हक्कसंपादनाची नोंद (Mutation)[cite: 8].</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-sm text-gray-700 mb-2">वारस नोंदीसाठी कागदपत्रे:</h3>
+                        <ul class="text-sm space-y-1 bg-gray-50 p-3 rounded border">
+                            <li>☑ मृत्यू दाखला</li>
+                            <li>☑ वंशावळ प्रतिज्ञापत्र</li>
+                            <li>☑ जुना ७/१२ उतारा व ८अ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 5: Land Calculators -->
+        <div id="tab-content-5" class="tab-content hidden space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+                <h2 class="font-bold text-emerald-800 text-lg">📐 जमीन मोजणी व हिस्से कॅल्क्युलेटर</h2>
+                <div>
+                    <label class="text-xs text-gray-600">हेक्टर-आर (Hectare-Are) प्रविष्ट करा:</label>
+                    <input type="text" id="calc-input" placeholder="उदा. 0.50 (म्हणजे 50 आर)" class="w-full p-2 border rounded text-sm mt-1">
+                </div>
+                <button onclick="calculateLand()" class="bg-emerald-600 text-white px-4 py-2 rounded text-sm w-full">अंगण / गुंठे मोजा</button>
+                <div id="calc-result" class="p-3 bg-emerald-50 rounded text-sm font-semibold text-emerald-800 hidden"></div>
+            </div>
+        </div>
+
+        <!-- TAB 6: Revenue Records & Registers (1 to 21) -->
+        <div id="tab-content-6" class="tab-content hidden space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+                <h2 class="font-bold text-emerald-800 text-lg">📊 ग्राम महसुली लेखे व नमुने (गाव नमुना १ ते २१)</h2>
+                <p class="text-sm text-gray-600">महाराष्ट्र जमीन महसूल नियमपुस्तिका (खंड चार) नुसार तलाठी व मंडल अधिकारी यांच्याकडील अभिलेख[cite: 60, 61]:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div class="border p-3 rounded bg-gray-50">
+                        <strong class="text-emerald-700 text-sm">भाग एक: कार्यपद्धती व कर्तव्ये</strong>
+                        <p class="mt-1 text-gray-600">तलाठी व मंडल निरीक्षक यांचे दौरे, रोजनिशी, शिबिरे आणि चौकशीचे नियम[cite: 60, 61, 67, 94].</p>
+                    </div>
+                    <div class="border p-3 rounded bg-gray-50">
+                        <strong class="text-emerald-700 text-sm">भाग दोन: गाव नमुना १ ते ५</strong>
+                        <p class="mt-1 text-gray-600">आकारबंद, वन जमीन, शासकीय पडीक जमीन, अकृषिक महसूल व दुमाला जमिनींची नोंदवही[cite: 61, 63].</p>
+                    </div>
+                    <div class="border p-3 rounded bg-gray-50">
+                        <strong class="text-emerald-700 text-sm">भाग दोन: गाव नमुना ६ ते ८ड</strong>
+                        <p class="mt-1 text-gray-600">फेरफार नोंदवही, हक्कनोंदणी (७/१२), कुळवहिवाट आणि ८अ धारण जमिनींची नोंदवही व वसुली ताळेबंद[cite: 63, 64].</p>
+                    </div>
+                    <div class="border p-3 rounded bg-gray-50">
+                        <strong class="text-emerald-700 text-sm">भाग दोन: गाव नमुना ९ ते २१</strong>
+                        <p class="mt-1 text-gray-600">रोकड वही, चलन, पिकांची आकडेवारी, पाणीपुरवठा साधने, बारनिशी आणि मासिक दैनंदिनी[cite: 64, 65].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Chapters Modal with Rewarded Ad Simulation -->
+    <div id="chapters-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-lg max-w-lg w-full max-h-[85vh] overflow-y-auto p-4 space-y-3">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="font-bold text-emerald-800">📚 १६ प्रकरणे व कलमे (MLRC 1966)</h3>
+                <button onclick="toggleChaptersModal()" class="text-gray-500 font-bold">✕</button>
+            </div>
+            <p class="text-xs text-gray-500">प्रकरणावर क्लिक करा. (पहिले प्रकरण फ्री, पुढील प्रकरणे ७ दिवसांसाठी ॲड पाहून अनलॉक करा)[cite: 2, 14, 15].</p>
+            
+            <div id="chapters-grid" class="space-y-2">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Rewarded Ad Popup Simulation -->
+    <div id="ad-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-lg max-w-sm w-full p-5 text-center space-y-4">
+            <h3 class="font-bold text-lg text-emerald-700">🎁 AdMob Rewarded Ad</h3>
+            <p class="text-sm text-gray-600">हे प्रकरण पुढील ७ दिवसांसाठी फ्री अनलॉक करण्यासाठी कृपया ५ सेकंद जाहिरात पहा[cite: 2, 14, 15].</p>
+            <div id="ad-timer" class="text-2xl font-bold text-emerald-600">5</div>
+            <div id="ad-loading" class="text-xs text-gray-400">जाहिरात लोड होत आहे...</div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Handler
+        function switchTab(tabNumber) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                el.classList.add('text-gray-600');
+            });
+            document.getElementById(`tab-content-${tabNumber}`).classList.remove('hidden');
+            const btn = document.getElementById(`tab-btn-${tabNumber}`);
+            btn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+            btn.classList.remove('text-gray-600');
+        }
+
+        // MLRC Chapters Data (1 to 16)
+        const chaptersData = [
+            { id: 1, name: "प्रकरण १: प्रारंभिक (कलम १ ते ४)", free: true },
+            { id: 2, name: "प्रकरण २: महसूल अधिकारी त्यांचे अधिकार (कलम ५ ते १९)", free: false },
+            { id: 3, name: "प्रकरण ३: जमिनीबाबत व मालकी हक्क (कलम २० ते ६४)", free: false },
+            { id: 4, name: "प्रकरण ४: जमीन महसुलासंबंधी (कलम ६५ ते ७८)", free: false },
+            { id: 5, name: "प्रकरण ५: महसुली मोजणी (कलम ७९ ते ८९)", free: false },
+            { id: 6, name: "प्रकरण ६: शेतजमीन आकारणी व जमाबंदी (कलम ९० ते १०७)", free: false },
+            { id: 7, name: "प्रकरण ७: अकृषिक (NA) आकारणी व जमाबंदी (कलम १०८ ते १२०)", free: false },
+            { id: 8, name: "प्रकरण ८: गावे, नगरे व शहरांच्या जागा (कलम १२१ ते १३१)", free: false },
+            { id: 9, name: "प्रकरण ९: सीमा व सीमाचिन्हे (कलम १३२ ते १४६)", free: false },
+            { id: 10, name: "प्रकरण १०: भूमि अभिलेख व अधिकार अभिलेख (कलम १४७ ते १६७)", free: false },
+            { id: 11, name: "प्रकरण ११: जमीन महसुलाची व थकबाकीची वसुली (कलम १६८ ते २२३)", free: false },
+            { id: 12, name: "प्रकरण १२: महसूल अधिकाऱ्यांची कार्यपद्धती (कलम २२४ ते २४५)", free: false },
+            { id: 13, name: "प्रकरण १३: अपिले, पुनरीक्षण व पुनर्विलोकन (कलम २४६ ते २५९)", free: false },
+            { id: 14, name: "प्रकरण १४: मुंबई शहरात जमीन महसूल विशेष तरतुदी (कलम २६० ते ३०७)", free: false },
+            { id: 15, name: "प्रकरण १५: महाराष्ट्र महसूल न्यायाधिकरण (कलम ३०८ ते ३२६)", free: false },
+            { id: 16, name: "प्रकरण १६: संकीर्ण तरतुदी (कलम ३२७ ते ३३७)", free: false }
+        ];
+
+        function toggleChaptersModal() {
+            const modal = document.getElementById('chapters-modal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                renderChapters();
+            }
+        }
+
+        function renderChapters() {
+            const container = document.getElementById('chapters-grid');
+            container.innerHTML = '';
+            
+            chaptersData.forEach(ch => {
+                let unlocked = ch.free || isChapterUnlocked(ch.id);
+                let div = document.createElement('div');
+                div.className = "p-3 border rounded-lg flex justify-between items-center text-sm bg-gray-50";
+                div.innerHTML = `
+                    <span>${ch.name}</span>
+                    <button onclick="handleChapterClick(${ch.id}, ${unlocked})" class="px-3 py-1 rounded text-xs font-semibold ${unlocked ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                        ${unlocked ? '🔓 अनलॉक (7 दिवस)' : '🔒 जाहिरात पाहून आणा'}
+                    </button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function isChapterUnlocked(chId) {
+            let unlockTime = localStorage.getItem(`mlrc_ch_${chId}`);
+            if (!unlockTime) return false;
+            let now = new Date().getTime();
+            let expiry = parseInt(unlockTime) + (7 * 24 * 60 * 60 * 1000); // 7 Days
+            return now < expiry;
+        }
+
+        let pendingChapterId = null;
+
+        function handleChapterClick(chId, isUnlocked) {
+            if (isUnlocked) {
+                alert(`प्रकरण ${chId} यशस्वीरीत्या उघडले आहे! सर्व कलमे वाचण्यासाठी उपलब्ध आहेत.`);
+            } else {
+                pendingChapterId = chId;
+                triggerRewardedAd();
+            }
+        }
+
+        function triggerRewardedAd() {
+            const adModal = document.getElementById('ad-modal');
+            const timerEl = document.getElementById('ad-timer');
+            adModal.classList.remove('hidden');
+            let timeLeft = 5;
+            timerEl.textContent = timeLeft;
+
+            let countdown = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    adModal.classList.add('hidden');
+                    if (pendingChapterId) {
+                        let now = new Date().getTime();
+                        localStorage.setItem(`mlrc_ch_${pendingChapterId}`, now);
+                        alert(`जाहिरात पाहिल्याबद्दल धन्यवाद! प्रकरण पुढील ७ दिवसांसाठी अनलॉक झाले आहे.`);
+                        renderChapters();
+                        pendingChapterId = null;
+                    }
+                }
+            }, 1000);
+        }
+
+        function calculateLand() {
+            let val = parseFloat(document.getElementById('calc-input').value);
+            let res = document.getElementById('calc-result');
+            if(isNaN(val)) {
+                alert('कृपया योग्य संख्या प्रविष्ट करा.');
+                return;
+            }
+            let gunthe = val * 100; 
+            res.classList.remove('hidden');
+            res.innerHTML = `अंदाजे रूपांतर: ${val} हेक्टर/आर = सुमारे ${gunthe} गुंठे किंवा ${val * 2.47} एकर`;
+        }
+
+        function filterMlrc() {
+            // Live search placeholder
+        }
+    </script>
+</body>
+</html>
